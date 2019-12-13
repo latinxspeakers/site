@@ -17,5 +17,22 @@ collections:
         - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Publish Date", name: "date", widget: "datetime"}
-        - {label: "Featured Image", name: "thumbnail", widget: "image"}
+        - {label: "Featured Image", name: "thumbnail", widget: "image", required: false }
         - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Talks"
+          name: "talks"
+          widget: "list"
+          fields:
+            - {label: "Conference Name", name: conference, widget: string }
+            - {label: "Talk Name", name: title, widget: string }
+            - {label: "Description", name: description, widget: string }
+            - {label: "Link", name: link, widget: string, required: false, pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)', "Must be a valid url"]}
+            - {label: "Slides", name: slides, widget: string, required: false, pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)', "Must be a valid url"]}
+            - {label: "Featured Image", name: "thumbnail", widget: "image", required: false }
+            - {label: "Date", name: "date", widget: "date"}
+
+            # - label: Author
+            #   name: author
+            #   widget: object
+            #   fields:
+            #     - {label: Name, name: name, widget: string, default: "Emmet"}
